@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login / Sign Up - Cagayan Tourist Spot</title>
+  <link rel="stylesheet" href="service.css" />
+</head>
+<body>
+
+  <!-- Background Video -->
+  <div class="back-video">
+    <video autoplay loop muted playsinline>
+      <source src="2khd - Trim.mp4" type="video/mp4" />
+    </video>
+  </div>
+
+  <!-- Login / Sign Up Form -->
+  <div class="login-container">
+    <h2 id="form-title">Sign Up</h2>
+
+    <!-- Toggle Buttons -->
+    <div class="form-toggle">
+      <button id="login-btn">Login</button>
+      <button id="signup-btn" class="active">Sign Up</button>
+    </div>
+
+    <!-- Login Form (Initially Hidden) -->
+    <form id="login-form" class="form-content" style="display: none;">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required />
+
+      <button type="submit" class="btn">Login</button>
+    </form>
+
+    <!-- Sign Up Form (Shown by default) -->
+    <form id="signup-form" class="form-content">
+      <label for="new-username">Username</label>
+      <input type="text" id="new-username" name="new-username" required />
+
+      <label for="new-email">Email</label>
+      <input type="email" id="new-email" name="new-email" required />
+
+      <label for="new-password">Password</label>
+      <input type="password" id="new-password" name="new-password" required />
+
+      <button type="submit" class="btn">Sign up</button>
+    </form>
+  </div>
+
+  <script>
+    // Get references to the buttons and forms
+    const loginBtn = document.getElementById('login-btn');
+    const signupBtn = document.getElementById('signup-btn');
+    const loginForm = document.getElementById('login-form');
+    const signupForm = document.getElementById('signup-form');
+    const formTitle = document.getElementById('form-title');
+
+    // Toggle between Login and Sign Up forms
+    loginBtn.addEventListener('click', () => {
+      loginForm.style.display = 'block';
+      signupForm.style.display = 'none';
+      loginBtn.classList.add('active');
+      signupBtn.classList.remove('active');
+      formTitle.textContent = 'Login';
+    });
+
+    signupBtn.addEventListener('click', () => {
+      loginForm.style.display = 'none';
+      signupForm.style.display = 'block';
+      signupBtn.classList.add('active');
+      loginBtn.classList.remove('active');
+      formTitle.textContent = 'Sign Up';
+    });
+  </script>
+
+</body>
+</html>
