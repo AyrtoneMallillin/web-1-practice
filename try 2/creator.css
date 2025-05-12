@@ -1,0 +1,244 @@
+:root {
+  --card-color: rgba(17, 25, 40, 0.95);
+  --card-border: rgba(255, 255, 255, 0.2);
+  --accent-color: #64b5f6;
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.85);
+  --modal-bg: rgba(17, 25, 40, 0.98);
+}
+
+.threelogs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4rem;
+  padding: 4rem 2rem;
+  height: 390px;
+  margin-top: 170px;
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 1;
+}
+
+.card {
+  background: var(--card-color);
+  width: 300px;
+  padding: 2rem;
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+  border: 1px solid var(--card-border);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  border-color: var(--accent-color);
+}
+
+.profile-img-wrapper {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  padding: 5px;
+  background: linear-gradient(45deg, transparent, var
+  (--accent-color) 50%, transparent);
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--card-color);
+  transition: transform 0.5s ease;
+}
+
+.card:hover .profile-img {
+  transform: scale(1.1);
+}
+
+.name-line h3 {
+  color: var(--text-primary);
+  font-size: 1.8rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.name-line p {
+  color: var(--accent-color);
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.role {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.bio {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 1rem 0;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.social-links a {
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background: var(--accent-color);
+  transform: translateY(-3px);
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background: var(--modal-bg);
+  padding: 3rem;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+  transform: scale(0.7);
+  opacity: 0;
+  transition: all 0.3s ease;
+  border: 1px solid var(--card-border);
+}
+
+.modal.active .modal-content {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 5px;
+  transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+  color: var(--accent-color);
+  transform: rotate(90deg);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.modal-profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent-color);
+}
+
+.modal-info h2 {
+  color: var(--text-primary);
+  margin: 0;
+  font-size: 2rem;
+}
+
+.modal-info p {
+  color: var(--accent-color);
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.modal-body {
+  margin: 2rem 0;
+}
+
+.info-section {
+  margin-bottom: 1.5rem;
+}
+
+.info-section h3 {
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.info-section p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.card {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: calc(var(--order) * 0.5s);
+}
+
+.blurred {
+  filter: none;
+  opacity: 1;
+  transform: none;
+} 

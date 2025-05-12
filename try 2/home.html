@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Discover Cagayan</title>
+  <link rel="stylesheet" href="all.css" />
+</head>
+<body>
+
+  <!-- Background Video -->
+  <div class="back-video">
+    <video autoplay loop muted playsinline>
+      <source src="2khd - Trim.mp4" type="video/mp4" />
+    </video>
+  </div>
+
+  <!-- Page Content -->
+  <div class="all">
+    <nav>
+      <div class="logo">Cagayan Tourist Spot</div>
+      <div class="menu-toggle" id="menu-toggle">☰</div>
+      <div class="nav-links" id="nav-links">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="spot.html">Spot</a></li>
+    <!--  <li><a href="service.html">Service</a></li>-->
+          <li><a href="Creator.html">Creator</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="content">
+      <h1>CAGAYAN VALLEY</h1>
+      <p>
+        province located in the northeastern part of Luzon,<br />
+        Philippines. Known for its breathtaking natural wonders,<br />
+        Cagayan offers a rich blend of history, culture, and adventure.
+      </p>
+      <a href="spot.html">Explore</a>
+    </div>
+  </div>
+
+  <script>
+
+const toggleBtn = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+toggleBtn.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+  toggleBtn.textContent = navLinks.classList.contains("active") ? "✖" : "☰";
+});
+
+  </script>
+
+</body>
+</html>

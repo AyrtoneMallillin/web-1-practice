@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: #f0f0f0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .threelogs {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px;
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .card {
+    background-color: #ffffff;
+    border: 2px solid #ddd;
+    padding: 20px;
+    width: 30%;
+    text-align: center;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  }
+  
+  img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover img {
+    transform: scale(1.05);
+  }
+  
+  .name-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .name-line h3,
+  .name-line p {
+    margin: 0;
+    font-size: 1.1em;
+  }
+  
+  .card p:last-of-type {
+    font-size: 0.95em;
+    color: #555;
+  }
+
+  @media (max-width: 768px) {
+    .threelogs {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .card {
+      width: 80%;
+      margin-bottom: 20px;
+    }
+  }
+  
+  .profile-img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    transition: filter 0.3s ease;
+  }
+  
+  .threelogs:hover .profile-img {
+    filter: blur(5px);
+  }
+  
+  .threelogs .profile-img:hover {
+    filter: none;
+  }
+  .profile-img {
+    transition: filter 0.3s ease, transform 0.3s ease;
+  }
+  
+  .profile-img:hover {
+    transform: scale(1.05);
+  }
+  
+  

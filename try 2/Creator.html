@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meet Our Team | Discover Cagayan</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="all.css">
+  <link rel="stylesheet" href="creator.css">
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Cagayan Tourist Spot</div>
+    <div class="menu-toggle">&#9776;</div>
+    <div class="nav-links">
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="spot.html">Spots</a></li>
+        <li><a href="Creator.html">Creator</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="back-video">
+    <video autoplay loop muted playsinline>
+      <source src="2khd - Trim.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="threelogs">
+        <div class="card uno" style="--order: 1" data-creator="ryan">
+          <div class="profile-img-wrapper">
+            <img src="dog.jpg" alt="Ryan Macababbad" class="profile-img">
+          </div>
+          <div class="name-line">
+            <h3>Ryan Macababbad</h3>
+            <p>front-end Developer</p>
+          </div>
+          <p class="role">Bachelor of Science in Information Technology</p>
+          <p class="bio">Passionate about creating seamless web experiences and innovative solutions.</p>
+          <div class="social-links">
+            <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="card dos" style="--order: 2" data-creator="ayrtone">
+          <div class="profile-img-wrapper">
+            <img src="pic-ni-ton.jpg" alt="Ayrtone John B. Mallillin" class="profile-img">
+          </div>
+          <div class="name-line">
+            <h3>Ayrtone John B. Mallillin</h3>
+            <p>Full Stack Developer</p>
+          </div>
+          <p class="role">Bachelor of Science in Information Technology</p>
+          <p class="bio">Versatile Full Stack Developer with expertise in both frontend and backend technologies. Skilled in creating complete web solutions from user interfaces to server architecture. Passionate about building seamless, end-to-end applications.</p>
+          <div class="social-links">
+            <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="card tres" style="--order: 3" data-creator="jobert">
+          <div class="profile-img-wrapper">
+            <img src="dog.jpg" alt="Jobert Fernandez" class="profile-img">
+          </div>
+          <div class="name-line">
+            <h3>Jobert Fernandez</h3>
+            <p>System Architect</p>
+          </div>
+          <p class="role">Bachelor of Science in Information Technology</p>
+          <p class="bio">Expert in designing scalable systems and optimizing performance.</p>
+          <div class="social-links">
+            <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="creatorModal">
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <div class="modal-header">
+        <img src="" alt="" class="modal-profile-img">
+        <div class="modal-info">
+          <h2></h2>
+          <p class="position"></p>
+          <p class="education"></p>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="info-section">
+          <h3>About</h3>
+          <p class="full-bio"></p>
+        </div>
+        <div class="info-section">
+          <h3>Skills</h3>
+          <p class="skills"></p>
+        </div>
+        <div class="info-section">
+          <h3>Projects</h3>
+          <p class="projects"></p>
+        </div>
+      </div>
+      <div class="social-links">
+        <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const cards = document.querySelectorAll('.card');
+      const modal = document.getElementById('creatorModal');
+      const modalClose = modal.querySelector('.modal-close');
+
+      // Creator data
+      const creatorData = {
+        ryan: {
+          name: 'Ryan Macababbad',
+          position: 'Front-end Developer',
+          education: 'Bachelor of Science in Information Technology',
+          image: 'dog.jpg',
+          bio: 'Passionate about creating seamless web experiences and innovative solutions. Specializes in modern web technologies and user-centric design. Always eager to learn and implement new technologies.',
+          skills: 'HTML5, CSS3, JavaScript, React.js, Vue.js, Responsive Design, UI/UX Design',
+          projects: 'Cagayan Tourist Spot Website, Personal Portfolio, E-commerce Platform'
+        },
+        ayrtone: {
+          name: 'Ayrtone John B. Mallillin',
+          position: 'Full Stack Developer',
+          education: 'Bachelor of Science in Information Technology',
+          image: 'pic-ni-ton.jpg',
+          bio: 'Versatile Full Stack Developer with expertise in both frontend and backend technologies. Skilled in creating complete web solutions from user interfaces to server architecture. Passionate about building seamless, end-to-end applications.',
+          skills: 'Frontend: React.js, Vue.js, HTML5, CSS3, JavaScript | Backend: Node.js, Python, PHP, MySQL, MongoDB | DevOps: Docker, Git',
+          projects: 'Tourism Management System, Full Stack E-commerce Platform, Real-time Chat Application'
+        },
+        jobert: {
+          name: 'Jobert Fernandez',
+          position: 'System Architect',
+          education: 'Bachelor of Science in Information Technology',
+          image: 'dog.jpg',
+          bio: 'Expert in designing scalable systems and optimizing performance. Passionate about creating robust and efficient software solutions. Focuses on building maintainable and scalable architectures.',
+          skills: 'System Design, Cloud Architecture, DevOps, AWS, Docker, Kubernetes',
+          projects: 'Cloud Infrastructure Setup, Microservices Architecture, System Integration'
+        }
+      };
+
+      // Open modal with creator info
+      function openModal(creator) {
+        const data = creatorData[creator];
+        const modalImg = modal.querySelector('.modal-profile-img');
+        const modalName = modal.querySelector('h2');
+        const modalPosition = modal.querySelector('.position');
+        const modalEducation = modal.querySelector('.education');
+        const modalBio = modal.querySelector('.full-bio');
+        const modalSkills = modal.querySelector('.skills');
+        const modalProjects = modal.querySelector('.projects');
+
+        modalImg.src = data.image;
+        modalImg.alt = data.name;
+        modalName.textContent = data.name;
+        modalPosition.textContent = data.position;
+        modalEducation.textContent = data.education;
+        modalBio.textContent = data.bio;
+        modalSkills.textContent = data.skills;
+        modalProjects.textContent = data.projects;
+
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      // Close modal
+      function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      // Add click events to cards
+      cards.forEach(card => {
+        card.addEventListener('click', () => {
+          const creator = card.getAttribute('data-creator');
+          openModal(creator);
+        });
+      });
+
+      // Close modal when clicking close button or outside
+      modalClose.addEventListener('click', closeModal);
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+
+      // Close modal with Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          closeModal();
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
